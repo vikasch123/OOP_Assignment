@@ -13,7 +13,7 @@ type Enrollment struct{
 func NewEnrollment(st Student, c Courses, gr Grader,  score float64) Enrollment{
 		return Enrollment{
 		Student: st,
-        Course:  c,
+        Courses:  c,
         Grader:  gr,
         score:   score,
 	}
@@ -21,6 +21,6 @@ func NewEnrollment(st Student, c Courses, gr Grader,  score float64) Enrollment{
 
 func (e Enrollment) String() string{
 	grade,_:= e.Grade(e)
-	return fmr.Sprintf("%s ➜ %s : %s", e.Student.Name(), e.Course.name, grade)
+	return fmt.Sprintf("%s ➜ %s : %s", e.Student.Name(), e.Courses.name, grade)
 }
 

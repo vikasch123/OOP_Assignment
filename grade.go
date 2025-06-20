@@ -17,7 +17,7 @@ type Grader interface{
 type PercentageGrader struct{}
 
 func (p *PercentageGrader) Grade(e Enrollment) (string,error){
-	return fmt.Printf("%.1f%%",e.score*100),nil
+	return fmt.Sprintf("%.1f%%",e.score*100),nil
 	
 }
 
@@ -27,9 +27,9 @@ type PassFailGrader struct{
 
 func (p *PassFailGrader) Grade(e Enrollment) (string,error){
 	if e.score>p.passMark{
-		return fmt.Println("Congrats you are PASS!") , nil 
+		return "PASS" , nil 
 	}
-	return fmt.Println("Sorry you have FAILED!") , nil 
+	return "FAIL" , nil 
 }
 
 
